@@ -53,7 +53,8 @@ RUN echo "change apt source" \
 
 
 RUN useradd debian  -s /bin/bash -m -k /etc/skel \
-    && echo "debian  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+    && echo "debian  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+    && usermod -G debian www-data
 
 # composer
 RUN echo 'install composer' \
