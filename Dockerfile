@@ -36,7 +36,7 @@ RUN echo "change apt source" \
     && docker-php-ext-configure gd --with-webp=/usr/include --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install -j$(nproc) pdo_mysql \
-    && docker-php-ext-install zip \
+    && docker-php-ext-install zip mysqli\
     && pecl install xdebug igbinary zstd\
     && docker-php-ext-enable xdebug igbinary zstd\
     && printf "yes\nyes\n\n" | pecl install redis \
